@@ -4,12 +4,15 @@ EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程
 
 EasyBackup 能够为需要进行内容备份的程序场景提供一体化支持。集合了基于任务调度的内容备份，内容压缩，远程发送，命令执行等等功能。而这一切，仅需进行简单的配置管理即可完成。
 
-最新版本： `2.2.0-RELEASE`
+**最新版本**： `3.2.0-RELEASE`
 
-插件：
+**插件**：
 
-- `easybackup-mysql-plugin-2.2.0-RELEASE.jar`  MySQL 数据库备份插件
+- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`  MySQL 数据库备份插件
 
+### EasyBackup Web Manger
+
+[EasyBackup Web Manger](https://github.com/ushelp/EasyBackup-Web "移步 EasyBackup Web Manger") 是一个基于 EasyBackup 框架引擎的 Java Web 管理器，可以在 Web UI 下完成备份配置管理，备份启动，停止控制。
 
 ## EasyBackup 特点
 
@@ -23,6 +26,7 @@ EasyBackup 能够为需要进行内容备份的程序场景提供一体化支持
 - **热加载**。支持运行期间热修改 `easybackup.properties`，修改监控配置参数无需重启 EasyBackup
 - **多目录支持**。可同时将目标文件备份到多个目录
 - **多服务支持**。可同时运行多个备份压缩发送服务
+- **运行时信息反馈**。获得备份运行时状况
 - **配置简单灵活**。
 
 
@@ -90,8 +94,8 @@ easybackup.enable=ON
 easybackup.cronexpression=0 30 * * * ?
 
 # Directory to store the backup file
-# You can specify more than one, separated by a ##
-# 文件备份目录，多个备份目录使用 ## 分隔
+# You can specify more than one, separated by a ;
+# 文件备份目录，多个备份目录使用 ; 分隔
 easybackup.dir=/user/backup/
 # backup file name under 'easybackup.backup.dir' directory
 # If not specified, the automatically generated file name is 'targetFileName-yyyyMMddHHmmssS[.zip|tar|tar.gz]'
@@ -116,9 +120,9 @@ easybackup.compressEncoding=
 easybackup.deleteTargetFile=OFF
 
 # Receive Backup file mail address
-# You can specify more than one, separated by a ##
-# 接收备份信息的邮箱列表，多个邮箱使用 ## 分隔
-easybackup.mail.receiver=yourmail@domain.com##youmail2@domai2.org
+# You can specify more than one, separated by a ;
+# 接收备份信息的邮箱列表，多个邮箱使用 ; 分隔
+easybackup.mail.receiver=yourmail@domain.com;youmail2@domai2.org
 
 # Send Mail Account Config
 # 邮箱发送者账户配置
@@ -150,14 +154,14 @@ easybackup.mail.sender.template=mail.tpl
 easybackup.mail.deleteBackup=OFF
 
 # Execute Command when backup before or after
-# You can specify more than one, separated by a ##
-# 备份开始前或完成后执行的前置和后置命令脚本，多个命令脚本使用 ## 分隔
+# You can specify more than one, separated by a ;
+# 备份开始前或完成后执行的前置和后置命令脚本，多个命令脚本使用 ; 分隔
 easybackup.cmd.before=
 easybackup.cmd.after=
 
 # Execute Interceptor when backup before or after
-# You can specify more than one, separated by a ##
-# 备份开始前或完成后执行的前置和后置处理类，多个类完全限定名使用 ## 分隔
+# You can specify more than one, separated by a ;
+# 备份开始前或完成后执行的前置和后置处理类，多个类完全限定名使用 ; 分隔
 easybackup.beforeClass=
 easybackup.afterClass=
 ```
@@ -175,7 +179,7 @@ easybackup.[file|user].NAME=value
 easybackup.[file|user].NAME.enable=ON | OFF
 easybackup.[file|user].NAME.cronexpression=0/10 * * * * ?
 
-easybackup.[file|user].NAME.dir=/user/backup/##/user/backup2
+easybackup.[file|user].NAME.dir=/user/backup/;/user/backup2
 easybackup.[file|user].NAME.file=
 easybackup.[file|user].NAME.compress=ON | OFF
 easybackup.[file|user].NAME.compressType=ZIP | GZIP | TAR
@@ -187,12 +191,12 @@ easybackup.user.NAME.dirClass=package.YourBackupDir
 easybackup.user.NAME.fileClass=package.YourBackupFile
 easybackup.user.NAME.backupClass=package.YourBackup
 
-easybackup.[file|user].NAME.cmd.before=/user/backupBefore.sh##/user/backupBefore2.sh
-easybackup.[file|user].NAME.cmd.after=/user/backcAfter.sh##/user/backcAfter2.sh
-easybackup.[file|user].NAME.beforeClass=package.BackupBefore##package.BackupBefore2
-easybackup.[file|user].NAME.afterClass=package.BackupAfter##package.BackupAfter2
+easybackup.[file|user].NAME.cmd.before=/user/backupBefore.sh;/user/backupBefore2.sh
+easybackup.[file|user].NAME.cmd.after=/user/backcAfter.sh;/user/backcAfter2.sh
+easybackup.[file|user].NAME.beforeClass=package.BackupBefore;package.BackupBefore2
+easybackup.[file|user].NAME.afterClass=package.BackupAfter;package.BackupAfter2
 
-easybackup.[file|user].NAME.mail.receiver=receivermail@domain.com##receivermail1@domain.com
+easybackup.[file|user].NAME.mail.receiver=receivermail@domain.com;receivermail1@domain.com
 
 easybackup.[file|user].NAME.mail.sender=sendermail@domain.com
 easybackup.[file|user].NAME.mail.sender.passowrd=sendermail_password
@@ -203,7 +207,7 @@ easybackup.[file|user].NAME.mail.sender.title=sendermail_title
 easybackup.[file|user].NAME.mail.sender.template=mail.tpl
 easybackup.[file|user].NAME.mail.deleteBackup=ON | OFF
 
-easybackup.[file|user].NAME.senders=package.userSenderClass##package.userSenderClass2
+easybackup.[file|user].NAME.senders=package.userSenderClass;package.userSenderClass2
 ```
 
 ### User 自定义配置说明
@@ -278,8 +282,8 @@ easybackup.enable=ON
 easybackup.cronexpression=0 30 * * * ?
 
 # Directory to store the backup file
-# You can specify more than one, separated by a ##
-# 文件备份目录，多个备份目录使用 ## 分隔
+# You can specify more than one, separated by a ;
+# 文件备份目录，多个备份目录使用 ; 分隔
 easybackup.dir=/user/backup/
 # backup file name under 'easybackup.backup.dir' directory
 # If not specified, the automatically generated file name is 'targetFileName-yyyyMMddHHmmssS[.zip|tar|tar.gz]'
@@ -304,9 +308,9 @@ easybackup.compressEncoding=
 easybackup.deleteTargetFile=OFF
 
 # Receive Backup file mail address
-# You can specify more than one, separated by a ##
-# 接收备份信息的邮箱列表，多个邮箱使用 ## 分隔
-easybackup.mail.receiver=yourmail@domain.com##youmail2@domai2.org
+# You can specify more than one, separated by a ;
+# 接收备份信息的邮箱列表，多个邮箱使用 ; 分隔
+easybackup.mail.receiver=yourmail@domain.com;youmail2@domai2.org
 
 # Send Mail Account Config
 # 邮箱发送者账户配置
@@ -338,14 +342,14 @@ easybackup.mail.sender.template=mail.tpl
 easybackup.mail.deleteBackup=OFF
 
 # Execute Command when backup before or after
-# You can specify more than one, separated by a ##
-# 备份开始前或完成后执行的前置和后置命令脚本，多个命令脚本使用 ## 分隔
+# You can specify more than one, separated by a ;
+# 备份开始前或完成后执行的前置和后置命令脚本，多个命令脚本使用 ; 分隔
 easybackup.cmd.before=
 easybackup.cmd.after=
 
 # Execute Interceptor when backup before or after
-# You can specify more than one, separated by a ##
-# 备份开始前或完成后执行的前置和后置处理类，多个类完全限定名使用 ## 分隔
+# You can specify more than one, separated by a ;
+# 备份开始前或完成后执行的前置和后置处理类，多个类完全限定名使用 ; 分隔
 easybackup.beforeClass=
 easybackup.afterClass=
 
@@ -357,17 +361,17 @@ easybackup.afterClass=
 ## easybackup.file.NAME=value
 ## easybackup.file.NAME.enable=ON | OFF
 ## easybackup.file.NAME.cronexpression=0/10 * * * * ?
-## easybackup.file.NAME.dir=/user/backup/##/user/backup2
+## easybackup.file.NAME.dir=/user/backup/;/user/backup2
 ## easybackup.file.NAME.file=
 ## easybackup.file.NAME.compress=ON | OFF
 ## easybackup.file.NAME.compressType=ZIP | GZIP | TAR
 ## easybackup.file.NAME.compressEncoding=
 ## easybackup.file.NAME.deleteTargetFile=ON | OFF
-## easybackup.file.NAME.cmd.before=/user/backupBefore.sh##/user/backupBefore2.sh
-## easybackup.file.NAME.cmd.after=/user/backcAfter.sh##/user/backcAfter2.sh
-## easybackup.file.NAME.beforeClass=package.BackupBefore##package.BackupBefore2
-## easybackup.file.NAME.afterClass=package.BackupAfter##package.BackupAfter2
-## easybackup.file.NAME.mail.receiver=receivermail@domain.com##receivermail1@domain.com
+## easybackup.file.NAME.cmd.before=/user/backupBefore.sh;/user/backupBefore2.sh
+## easybackup.file.NAME.cmd.after=/user/backcAfter.sh;/user/backcAfter2.sh
+## easybackup.file.NAME.beforeClass=package.BackupBefore;package.BackupBefore2
+## easybackup.file.NAME.afterClass=package.BackupAfter;package.BackupAfter2
+## easybackup.file.NAME.mail.receiver=receivermail@domain.com;receivermail1@domain.com
 ## easybackup.file.NAME.mail.sender=sendermail@domain.com
 ## easybackup.file.NAME.mail.sender.passowrd=sendermail_password
 ## easybackup.file.NAME.mail.sender.host=sendermail_host
@@ -376,14 +380,14 @@ easybackup.afterClass=
 ## easybackup.file.NAME.mail.sender.title=sendermail_title
 ## easybackup.file.NAME.mail.sender.template=mail.tpl
 ## easybackup.file.NAME.mail.deleteBackup=ON | OFF
-## easybackup.file.NAME.senders=package.userSenderClass##package.userSenderClass2
+## easybackup.file.NAME.senders=package.userSenderClass;package.userSenderClass2
 
 
 
 # Example:
 easybackup.file.LOG=D:/log
 easybackup.file.LOG.enable=ON
-easybackup.file.LOG.dir=D:/backup/logfile/##E:/backup/logfile
+easybackup.file.LOG.dir=D:/backup/logfile/;E:/backup/logfile
 easybackup.file.LOG.cronexpression=0 30 * * * ?
 easybackup.file.LOG.compress=ON
 easybackup.file.LOG.compressType=ZIP
@@ -395,7 +399,7 @@ easybackup.file.LOG.compressType=ZIP
 ## easybackup.user.NAME=value
 ## easybackup.user.NAME.enable=ON | OFF
 ## easybackup.user.NAME.cronexpression=0/10 * * * * ?
-## easybackup.user.NAME.dir=/user/backup/##/user/backup2
+## easybackup.user.NAME.dir=/user/backup/;/user/backup2
 ## easybackup.user.NAME.file=
 ## easybackup.user.NAME.compress=ON | OFF
 ## easybackup.user.NAME.compressType=ZIP | GZIP | TAR
@@ -405,11 +409,11 @@ easybackup.file.LOG.compressType=ZIP
 ## easybackup.user.NAME.dirClass=package.YourBackupDir
 ## easybackup.user.NAME.fileClass=package.YourBackupFile
 ## easybackup.user.NAME.backupClass=package.YourBackup
-## easybackup.user.NAME.cmd.before=/user/backupBefore.sh##/user/backupBefore2.sh
-## easybackup.user.NAME.cmd.after=/user/backcAfter.sh##/user/backcAfter2.sh
-## easybackup.user.NAME.beforeClass=package.BackupBefore##package.BackupBefore2
-## easybackup.user.NAME.afterClass=package.BackupAfter##package.BackupAfter2
-## easybackup.user.NAME.mail.receiver=receivermail@domain.com##receivermail1@domain.com
+## easybackup.user.NAME.cmd.before=/user/backupBefore.sh;/user/backupBefore2.sh
+## easybackup.user.NAME.cmd.after=/user/backcAfter.sh;/user/backcAfter2.sh
+## easybackup.user.NAME.beforeClass=package.BackupBefore;package.BackupBefore2
+## easybackup.user.NAME.afterClass=package.BackupAfter;package.BackupAfter2
+## easybackup.user.NAME.mail.receiver=receivermail@domain.com;receivermail1@domain.com
 ## easybackup.user.NAME.mail.sender=sendermail@domain.com
 ## easybackup.user.NAME.mail.sender.passowrd=sendermail_password
 ## easybackup.user.NAME.mail.sender.host=sendermail_host
@@ -418,12 +422,12 @@ easybackup.file.LOG.compressType=ZIP
 ## easybackup.user.NAME.mail.sender.title=sendermail_title
 ## easybackup.user.NAME.mail.sender.template=mail.tpl
 ## easybackup.user.NAME.mail.deleteBackup=ON | OFF
-## easybackup.user.NAME.senders=package.userSenderClass##package.userSenderClass2
+## easybackup.user.NAME.senders=package.userSenderClass;package.userSenderClass2
 
 # Example:
 easybackup.user.MySQL=mysqldump -uroot -proot demoDB 
 easybackup.user.MySQL.targetFileClass=cn.easyproject.easybackup.mysql.MySQLTargetFile
-easybackup.user.MySQL.dir=D:/backup/##E:/backupdb
+easybackup.user.MySQL.dir=D:/backup/;E:/backupdb
 # default targetFileName is 'demoDB-yyyyMMddHHmmssS.sql'
 # you can use variable: ${targetFileName}, ${name}, ${type}, ${value}, ${backuptime?string("yyyyMMddHHmmssS")}, ${backupConfiguration.XXX}
 easybackup.user.MySQL.file= demodb-${backuptime?string("yyyyMMddHHmmss")}-backup.sql
@@ -472,9 +476,9 @@ ${backupConfiguration.XXX}：备份配置对象属性
 
 EasyBackup Application 已经包含了当前官方的而所有插件。如果您开发了新的插件，可以将插件的内容直接添加到 `easybackup-X.X.X-RELEASE-APPLICATION.jar` 中。  
 
-### 内置插件：
+**内置插件**：
 
-- `easybackup-mysql-plugin-2.2.0-RELEASE.jar`: **MySQL 数据库备份插件**
+- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`: **MySQL 数据库备份插件**
 
 ### 使用步骤
  
@@ -521,7 +525,7 @@ EasyBackup 同时是一个免费开源跨平台的 Java 内容备份引擎框架
  <dependency>
      <groupId>cn.easyproject</groupId>
      <artifactId>easybackup</artifactId>
-     <version>2.2.0-RELEASE</version>
+     <version>3.2.0-RELEASE</version>
  </dependency>
  ```
 
@@ -597,12 +601,70 @@ EasyBackup 提供了极大的灵活性，扩展以下接口，即可自定义您
   **参数默认值**: 
 
 
+### 自定义配置文件和 freemarker 配置对象
+为了提供更多灵活性，EasyBackup 允许在启动备份服务前自定义**配置文件对象 Properties File**（`easybackup.properties`） 和邮件发送时的 **freemarker 配置对象**（`Configuration`）。
+
+```JAVA
+// 自定义配置文件对象
+EasyBackup.setPropertiesFile(java.io.File propertiesFile);
+
+// 自定义邮件发送的 freemarker 配置对象
+MailSender.setFreemarkerConfiguration(freemarker.template.Configuration configuration);
+```
+
+示例：
+
+```JAVA
+// Custom EasyBackup initialization Parameter
+
+// 自定义配置文件对象
+Resource res = new ServletContextResource(sce.getServletContext(), "/easybackup.properties"); 
+try {
+    // Properties File 
+    EasyBackup.setPropertiesFile(res.getFile());
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+// 自定义邮件发送的 freemarker 配置对象
+Configuration cfg= new Configuration(Configuration.VERSION_2_3_23);
+cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+cfg.setDefaultEncoding("UTF-8");
+cfg.setServletContextForTemplateLoading(sce.getServletContext(), "/template");
+// MailSender Configuration
+MailSender.setFreemarkerConfiguration(cfg);
+```
+
+### 运行时信息获取
+
+`cn.easyproject.easybackup.BackupRuntime` 提供了备份运行时的信息。
+
+```
+# 备份控制
+start()：启动
+stop()：停止
+
+# 启动后的运行状态信息
+started: 是否启动
+allBackupsOnStartup：所有配置的服务
+errorJobBackupsOnStartup：任务启动失败的服务
+runningBackupsOnStartup：正在运行的服务
+
+# 配置信息
+getBackupNames()：所有配置的服务名称
+getBackupsConfigurations()：所有备份服务配置对象
+getEnableBackupsConfigurations()：所有设为启用（enable=ON）的备份服务配置对象
+getGlobalBackupsConfiguration()：全局备份配置对象
+getProperties()：Properties对象
+getPropertiesFile()：Properties File 对象
+```
+
 
 ## End
 
-[官方主页](http://www.easyproject.cn/easymonitor/zh-cn/index.jsp '官方主页')
+[官方主页](http://www.easyproject.cn/easybackup/zh-cn/index.jsp '官方主页')
 
-[留言评论](http://www.easyproject.cn/easymonitor/zh-cn/index.jsp#donation '留言评论')
+[留言评论](http://www.easyproject.cn/easybackup/zh-cn/index.jsp#donation '留言评论')
 
 如果您有更好意见，建议或想法，请联系我。
 

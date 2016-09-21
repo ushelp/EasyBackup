@@ -12,7 +12,7 @@ EasyBackup Application 已经包含了当前官方的而所有插件。如果您
 
 ### 内置插件：
 
-- `easybackup-mysql-plugin-2.2.0-RELEASE.jar`: **MySQL 数据库备份插件**
+- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`: **MySQL 数据库备份插件**
 
 
 ### 使用步骤
@@ -56,7 +56,7 @@ EasyBackup Application already contains the current official and all plug-ins. I
 
 ### Plugins:
 
-- `easybackup-mysql-plugin-2.2.0-RELEASE.jar`: **MySQL Database backup plugin**
+- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`: **MySQL Database backup plugin**
 
 ### Steps for usage
  

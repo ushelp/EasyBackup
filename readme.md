@@ -9,6 +9,13 @@ A free, open source, cross-platform content backup, content compression,  remote
 
 ![EasyBackup](doc/images/EasyBackup.png)
 
+## EasyBackup Web Manger
+[EasyBackup Web Manger](http://xxxx "EasyBackup Web Manger") 是一个基于 EasyBackup 框架引擎的 Java Web 管理器，可以在 Web UI 下完成备份配置管理，备份启动，停止控制。
+
+
+[EasyBackup Web Manger](http://xxxx "EasyBackup Web Manger") is a framework based on the Easy Backup Engine Java Web Manager, you can complete the backup configuration management Web UI, the backup start and stop control.
+
+
 
 ## 中文
 
@@ -16,11 +23,12 @@ EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程
 
 EasyBackup 能够为需要进行内容备份的程序场景提供一体化支持。集合了基于任务调度的内容备份，内容压缩，远程发送，命令执行等等功能。而这一切，仅需进行简单的配置管理即可完成。
 
-最新版本： `2.2.0-RELEASE`
+**最新版本**： `3.2.0-RELEASE`
 
-插件：
+**插件**：
 
-- `easybackup-mysql-plugin-2.2.0-RELEASE.jar`  MySQL 数据库备份插件
+- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`  MySQL 数据库备份插件
+
 
 [中文说明文档](doc/readme_zh_CN.md)
 
@@ -39,11 +47,11 @@ EasyBackup is a free open-source Java-based, cross-platform content backup, cont
 EasyBackup provide full support for the need to backup the content. Collection of content-based task scheduling backups, content compression, remote sending, command execution and more. And all this, just a simple configuration management to complete.
 
 
-The latest version: `2.2.0-RELEASE`
+**Latest version**: `3.2.0-RELEASE`
 
-Plugins: 
+**Plugins**: 
 
-- `easybackup-mysql-plugin-2.2.0-RELEASE.jar`  MySQL Databasse Backup plugin
+- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`  MySQL Databasse Backup plugin
 
 [English Readme](doc/readme_en.md)
 
@@ -63,7 +71,7 @@ If you have more comments, suggestions or ideas, please contact me.
 <dependency>
    <groupId>cn.easyproject</groupId>
    <artifactId>easybackup</artifactId>
-   <version>2.2.0-RELEASE</version>
+   <version>3.2.0-RELEASE</version>
 </dependency>
 
 <!-- EasyBackup Plugins -->
@@ -71,11 +79,16 @@ If you have more comments, suggestions or ideas, please contact me.
 <dependency>
    <groupId>cn.easyproject</groupId>
    <artifactId>easybackup-mysql</artifactId>
-   <version>2.2.0-RELEASE</version>
+   <version>3.2.0-RELEASE</version>
 </dependency>
 ```
 
 
+## EasyBackup Web Manger
+[EasyBackup Web Manger](https://github.com/ushelp/EasyBackup-Web "移步 EasyBackup Web Manger") 是一个基于 EasyBackup 框架引擎的 Java Web 管理器，可以在 Web UI 下完成备份配置管理，备份启动，停止控制。
+
+
+[EasyBackup Web Manger](https://github.com/ushelp/EasyBackup-Web "Goto EasyBackup Web Manger") is a Java Web Manager based on the EasyBackup framework Engine, you can complete the backup configuration, start and stop control.
 
 
 

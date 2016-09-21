@@ -14,7 +14,7 @@ EasyBackup 同时是一个免费开源跨平台的 Java 内容备份引擎框架
  <dependency>
      <groupId>cn.easyproject</groupId>
      <artifactId>easybackup</artifactId>
-     <version>2.2.0-RELEASE</version>
+     <version>3.2.0-RELEASE</version>
  </dependency>
  ```
 
@@ -89,6 +89,63 @@ EasyBackup 提供了极大的灵活性，扩展以下接口，即可自定义您
 
   **参数默认值**: 
 
+### 自定义配置文件和 freemarker 配置对象
+为了提供更多灵活性，EasyBackup 允许在启动备份服务前自定义**配置文件对象 Properties File**（`easybackup.properties`） 和邮件发送时的 **freemarker 配置对象**（`Configuration`）。
+
+```JAVA
+// 自定义配置文件对象
+EasyBackup.setPropertiesFile(java.io.File propertiesFile);
+
+// 自定义邮件发送的 freemarker 配置对象
+MailSender.setFreemarkerConfiguration(freemarker.template.Configuration configuration);
+```
+
+示例：
+
+```JAVA
+// Custom EasyBackup initialization Parameter
+
+// 自定义配置文件对象
+Resource res = new ServletContextResource(sce.getServletContext(), "/easybackup.properties"); 
+try {
+    // Properties File 
+    EasyBackup.setPropertiesFile(res.getFile());
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+// 自定义邮件发送的 freemarker 配置对象
+Configuration cfg= new Configuration(Configuration.VERSION_2_3_23);
+cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+cfg.setDefaultEncoding("UTF-8");
+cfg.setServletContextForTemplateLoading(sce.getServletContext(), "/template");
+// MailSender Configuration
+MailSender.setFreemarkerConfiguration(cfg);
+```
+
+### 运行时信息获取
+
+`cn.easyproject.easybackupBackupRuntime` 提供了备份运行时的信息。
+
+```
+# 备份控制
+start()：启动
+stop()：停止
+
+# 启动后的运行状态信息
+started: 是否启动
+allBackupsOnStartup：所有配置的服务
+errorJobBackupsOnStartup：任务启动失败的服务
+runningBackupsOnStartup：正在运行的服务
+
+# 配置信息
+getBackupNames()：所有配置的服务名称
+getBackupsConfigurations()：所有备份服务配置对象
+getEnableBackupsConfigurations()：所有设为启用（enable=ON）的备份服务配置对象
+getGlobalBackupsConfiguration()：全局备份配置对象
+getProperties()：Properties对象
+getPropertiesFile()：Properties File 对象
+```
 
 
 
@@ -104,7 +161,7 @@ EasyBackup  is also a free open source cross-platform Java content backup engine
  <dependency>
      <groupId>cn.easyproject</groupId>
      <artifactId>easybackup</artifactId>
-     <version>2.2.0-RELEASE</version>
+     <version>3.2.0-RELEASE</version>
  </dependency>
  ```
 
@@ -180,6 +237,64 @@ EasyBackup provides great flexibility, expandability following interfaces, you c
   **default**: 
 
 
+### Custom Properties File and Freemarker Configuration object
+To provide more flexibility, EasyBackup permit before starting backup service ** custom Properties File object** ( `easybackup.properties`) and ** mail to send Freemarker Configuration object** (` Configuration`).
+
+
+```JAVA
+// Custom Properties File
+EasyBackup.setPropertiesFile(java.io.File propertiesFile);
+
+// Custom mail to send Freemarker Configuration object
+MailSender.setFreemarkerConfiguration(freemarker.template.Configuration configuration);
+```
+
+Example:
+
+```JAVA
+// Custom EasyBackup initialization Parameter
+
+// Custom Properties File
+Resource res = new ServletContextResource(sce.getServletContext(), "/easybackup.properties"); 
+try {
+    // Properties File 
+    EasyBackup.setPropertiesFile(res.getFile());
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+// Custom mail to send Freemarker Configuration object
+Configuration cfg= new Configuration(Configuration.VERSION_2_3_23);
+cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+cfg.setDefaultEncoding("UTF-8");
+cfg.setServletContextForTemplateLoading(sce.getServletContext(), "/template");
+// MailSender Configuration
+MailSender.setFreemarkerConfiguration(cfg);
+```
+
+### Runtime access to information
+
+`cn.easyproject.easybackupBackupRuntime` providing information backup runtime.
+
+```
+# Backup controller
+start()
+stop()
+
+# Information when started
+started: Weather started
+allBackupsOnStartup
+runningBackupsOnStartup
+errorJobBackupsOnStartup
+
+# Configuration information
+getBackupNames(): All configuration names
+getBackupsConfigurations(): All configuration objects
+getEnableBackupsConfigurations():All enable（enable=ON） configuration objects
+getGlobalBackupsConfiguration(): Global Configuration object
+getProperties(): Properties object
+getPropertiesFile(): Properties File object
+```
 
 
 
