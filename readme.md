@@ -79,11 +79,15 @@ If you have more comments, suggestions or ideas, please contact me.
 
 
 ## EasyBackup Web Manger
+
 [EasyBackup Web Manger](https://github.com/ushelp/EasyBackup-Web "移步 EasyBackup Web Manger") 是一个基于 EasyBackup 框架引擎的 Java Web 管理器，可以在 Web UI 下完成备份配置管理，备份启动，停止控制。
 
+![EasyBackup web manager](doc/images/dashboard_zh_CN.png)
 
 [EasyBackup Web Manger](https://github.com/ushelp/EasyBackup-Web "Goto EasyBackup Web Manger") is a Java Web Manager based on the EasyBackup framework Engine, you can complete the backup configuration, start and stop control.
 
+
+![EasyBackup web manager](doc/images/dashboard.png)
 
 
 Email：<inthinkcolor@gmail.com>

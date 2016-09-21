@@ -618,6 +618,15 @@ getPropertiesFile(): Properties File object
 ```
 
 
+
+## EasyBackup Web Manger
+
+[EasyBackup Web Manger](https://github.com/ushelp/EasyBackup-Web "Goto EasyBackup Web Manger") is a Java Web Manager based on the EasyBackup framework Engine, you can complete the backup configuration, start and stop control.
+
+
+![EasyBackup web manager](images/dashboard.png)
+
+
 ## End
 
 [The official home page](http://www.easyproject.cn/easybackup/en/index.jsp 'The official home page')

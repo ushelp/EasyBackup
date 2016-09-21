@@ -660,6 +660,14 @@ getPropertiesFile()：Properties File 对象
 ```
 
 
+
+## EasyBackup Web Manger
+
+[EasyBackup Web Manger](https://github.com/ushelp/EasyBackup-Web "移步 EasyBackup Web Manger") 是一个基于 EasyBackup 框架引擎的 Java Web 管理器，可以在 Web UI 下完成备份配置管理，备份启动，停止控制。
+
+![EasyBackup web manager](images/dashboard_zh_CN.png)
+
+
 ## End
 
 [官方主页](http://www.easyproject.cn/easybackup/zh-cn/index.jsp '官方主页')
