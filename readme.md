@@ -9,12 +9,6 @@ A free, open source, cross-platform content backup, content compression,  remote
 
 ![EasyBackup](doc/images/EasyBackup.png)
 
-## EasyBackup Web Manger
-[EasyBackup Web Manger](http://xxxx "EasyBackup Web Manger") 是一个基于 EasyBackup 框架引擎的 Java Web 管理器，可以在 Web UI 下完成备份配置管理，备份启动，停止控制。
-
-
-[EasyBackup Web Manger](http://xxxx "EasyBackup Web Manger") is a framework based on the Easy Backup Engine Java Web Manager, you can complete the backup configuration management Web UI, the backup start and stop control.
-
 
 
 ## 中文
