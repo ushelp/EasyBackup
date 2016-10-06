@@ -681,4 +681,11 @@ Email：<inthinkcolor@gmail.com>
 [http://www.easyproject.cn](http://www.easyproject.cn "EasyProject Home")
 
 
+**支付宝钱包扫一扫捐助：**
+
+我们相信，每个人的点滴贡献，都将是推动产生更多、更好免费开源产品的一大步。
+
+**感谢慷慨捐助，以支持服务器运行和鼓励更多社区成员。**
+
 <img alt="支付宝钱包扫一扫捐助" src="http://www.easyproject.cn/images/s.png"  title="支付宝钱包扫一扫捐助"  height="256" width="256"></img>
+
