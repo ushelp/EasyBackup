@@ -494,10 +494,9 @@ ${backupConfiguration.XXX}：备份配置对象属性
 
 ## EasBackup Application 
 
-**EasBackup Application** 是开箱即用的 EasBackup 备份应用。按需配置您的备份服务，启动即可。
+**EasBackup Application**（`libs/easybackup_application`） 是开箱即用的 EasBackup 备份应用。按需配置您的备份服务，启动即可。
 
-
-EasyBackup Application 已经包含了当前官方的而所有插件。如果您开发了新的插件，可以将插件的内容直接添加到 `easybackup-X.X.X-RELEASE-APPLICATION.jar` 中。  
+EasyBackup Application 已经包含了当前官方的而所有插件。如果您开发了新的插件，可以将插件的内容直接添加到 `easybackup-application.jar` 中。  
 
 **内置插件**：
 
@@ -538,7 +537,7 @@ EasyBackup Application 已经包含了当前官方的而所有插件。如果您
 
 ## EasyBackup Engine Framework
 
-EasyBackup 同时是一个免费开源跨平台的 Java 内容备份引擎框架(**EasyBackup Engine Framework**)，提供统一规范的备份配置和核心调度。
+EasyBackup 同时是一个免费开源跨平台的 Java 内容备份引擎框架(**EasyBackup Engine Framework**)（`libs/easybackup_engine_framework`），提供统一规范的备份配置和核心调度。
 
 ### 使用步骤
 

@@ -454,13 +454,13 @@ ${backupConfiguration.XXX}: BackupConfiguration Obejct
 
 ## EasBackup Application 
 
-**EasBackup Application** can run as application. Configure your backup service as needed, can be activated.
+**EasBackup Application**（`libs/easybackup_application`） can run as application. Configure your backup service as needed, can be activated.
 
 EasyBackup Application already contains the current official and all plug-ins. If you develop a new plug-in, plug-in content can be added directly to the `easybackup-X.X.X-RELEASE-APPLICATION.jar` in.
 
 ### Plugins:
 
-- `easybackup-mysql-plugin-3.3.2-RELEASE.jar`: **MySQL Database backup plugin**
+- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`: **MySQL Database backup plugin**
 
 ### Steps for usage
  
@@ -497,7 +497,7 @@ EasyBackup Application already contains the current official and all plug-ins. I
 
 ## EasyBackup Engine Framework
 
-EasyBackup  is also a free open source cross-platform Java content backup engine frame (**EasyBackup Engine Framework**), to provide a unified and standard core configuration and backup scheduling.
+EasyBackup  is also a free open source cross-platform Java content backup engine frame (**EasyBackup Engine Framework**)（`libs/easybackup_engine_framework`）, to provide a unified and standard core configuration and backup scheduling.
 
 ### Steps for usage
 
