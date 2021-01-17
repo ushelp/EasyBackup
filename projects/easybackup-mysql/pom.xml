@@ -50,7 +50,7 @@ A free, open source, cross-platform content backup, content compression,  remote
 		<spring.version>4.3.1.RELEASE</spring.version>
 		<javamail.version>1.5.5</javamail.version>
 		<freemarker.version>2.3.23</freemarker.version>
-		<quartz.version>2.2.3</quartz.version>
+		<quartz.version>2.3.2</quartz.version>
 		<commonsCompress.version>1.12</commonsCompress.version>
 	</properties>
 
