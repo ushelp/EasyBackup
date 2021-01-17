@@ -1,18 +1,41 @@
 # EasyBackup
 
-EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程发送一体化任务调度应用及引擎框架。即可开箱即用(**EasyBackup Application**)，又可以作为内容备份引擎框架扩展(**EasyBackup Engine Framework**)。
+EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程发送一体化任务调度应用及引擎框架。
 
-EasyBackup 能够为需要进行内容备份的程序场景提供一体化支持。集合了基于任务调度的内容备份，内容压缩，远程发送，命令执行等等功能。而这一切，仅需进行简单的配置管理即可完成。
+能够为需要进行内容备份的程序场景提供一体化支持：集合了基于任务调度的内容备份，内容压缩，远程发送，命令执行等等功能。而这一切，仅需进行简单的配置管理即可完成。
 
-**最新版本**： `3.2.0-RELEASE`
+请根据用途选择：
+- **EasyBackup Application**: 开箱即用版本，作为应用运行
+- **EasyBackup Engine Framework**: 作为 Java 内容备份引擎框架扩展
 
-**插件**：
 
-- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`  MySQL 数据库备份插件
+## TOC
 
-### EasyBackup Web Manger
+- [EasyBackup 特点](#easybackup-特点)
+- [EasyBackup 主要组件](#easybackup-主要组件)
+- [BackupConfiguration](#backupconfiguration)
+- [Properties](#properties)
+    - [配置结构](#配置结构)
+    - [全局配置（作为监控服务配置的全局默认值，可选）](#全局配置作为监控服务配置的全局默认值可选)
+    - [备份服务配置（可以覆盖全局配置的默认值）](#备份服务配置可以覆盖全局配置的默认值)
+    - [User 自定义配置说明](#user-自定义配置说明)
+    - [变量使用](#变量使用)
+- [完全配置示例](#完全配置示例)
+- [邮件模板配置](#邮件模板配置)
+    - [自定义模板配置](#自定义模板配置)
+    - [模板内置变量](#模板内置变量)
+- [EasBackup Application](#easbackup-application)
+    - [使用步骤](#使用步骤)
+- [EasyBackup Engine Framework](#easybackup-engine-framework)
+    - [使用步骤](#使用步骤-1)
+    - [自定义接口](#自定义接口)
+    - [自定义配置文件和 freemarker 配置对象](#自定义配置文件和-freemarker-配置对象)
+    - [运行时信息获取](#运行时信息获取)
+- [Plugins](#plugins)
+- [EasyBackup Web Manger](#easybackup-web-manger)
+- [End](#end)
 
-[EasyBackup Web Manger](https://github.com/ushelp/EasyBackup-Web "移步 EasyBackup Web Manger") 是一个基于 EasyBackup 框架引擎的 Java Web 管理器，可以在 Web UI 下完成备份配置管理，备份启动，停止控制。
+
 
 ## EasyBackup 特点
 
@@ -82,7 +105,7 @@ EasyBackup 能够为需要进行内容备份的程序场景提供一体化支持
 
 ![EasyBackup Properties](images/EasyBackupProperties.png)
 
-### - **全局配置**（作为监控服务配置的全局默认值，可选）
+### 全局配置（作为监控服务配置的全局默认值，可选）
 
 ```properties
 # Backup ON or OFF, default is ON
@@ -166,7 +189,7 @@ easybackup.beforeClass=
 easybackup.afterClass=
 ```
 
-### **备份服务配置**（可以覆盖全局配置的默认值）
+### 备份服务配置（可以覆盖全局配置的默认值）
 - **file** 文件备份服务配置
 - **user** 自定义备份服务配置
 
@@ -525,7 +548,7 @@ EasyBackup 同时是一个免费开源跨平台的 Java 内容备份引擎框架
  <dependency>
      <groupId>cn.easyproject</groupId>
      <artifactId>easybackup</artifactId>
-     <version>3.2.0-RELEASE</version>
+     <version>3.3.2-RELEASE</version>
  </dependency>
  ```
 
@@ -659,7 +682,9 @@ getProperties()：Properties对象
 getPropertiesFile()：Properties File 对象
 ```
 
+## Plugins
 
+- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`  MySQL Databasse Backup plugin
 
 ## EasyBackup Web Manger
 

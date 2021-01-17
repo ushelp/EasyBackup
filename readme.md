@@ -17,7 +17,7 @@ EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程
 
 EasyBackup 能够为需要进行内容备份的程序场景提供一体化支持。集合了基于任务调度的内容备份，内容压缩，远程发送，命令执行等等功能。而这一切，仅需进行简单的配置管理即可完成。
 
-**最新版本**： `3.2.0-RELEASE`
+**最新版本**： `3.3.2-RELEASE`
 
 **插件**：
 
@@ -41,7 +41,7 @@ EasyBackup is a free open-source Java-based, cross-platform content backup, cont
 EasyBackup provide full support for the need to backup the content. Collection of content-based task scheduling backups, content compression, remote sending, command execution and more. And all this, just a simple configuration management to complete.
 
 
-**Latest version**: `3.2.0-RELEASE`
+**Latest version**: `3.3.2-RELEASE`
 
 **Plugins**: 
 

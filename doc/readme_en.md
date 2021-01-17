@@ -1,20 +1,44 @@
 # EasyBackup
 
-EasyBackup is a free open-source Java-based, cross-platform content backup, content compression, remote sending  task scheduling application and engine framework. Can run as application(**EasyBackup Application**), and can be extended as the content backup engine framework(**EasyBackup Engine Framework**).
+EasyBackup is a free open-source Java-based, cross-platform content backup, content compression, remote sending  task scheduling application and engine framework. 
 
- 
-EasyBackup provide full support for the need to backup the content. Collection of content-based task scheduling backups, content compression, remote sending, command execution and more. And all this, just a simple configuration management to complete.
-
-**Latest version**: `3.2.0-RELEASE`
-
-**Plugins**: 
-
-- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`  MySQL Databasse Backup plugin
+Provide full support for the need to backup the content: Collection of content-based task scheduling backups, content compression, remote sending, command execution and more. And all this, just a simple configuration management to complete.
 
 
-### EasyBackup Web Manger
+Please choose according to purpose:
+- **EasyBackup Application**: Can run as application
+- **EasyBackup Engine Framework**:  Can be extended as the content backup engine framework for Java
 
-[EasyBackup Web Manger](https://github.com/ushelp/EasyBackup-Web "Goto EasyBackup Web Manger") is a Java Web Manager based on the EasyBackup framework Engine, you can complete the backup configuration, start and stop control.
+**Latest version**: `3.3.2-RELEASE`
+
+
+## TOC
+- [EasyBackup Feature](#easybackup-feature)
+- [Easy Backup main components](#easy-backup-main-components)
+- [BackupConfiguration](#backupconfiguration)
+- [Properties](#properties)
+    - [Configuration Structure](#configuration-structure)
+    - [Global configuration(monitoring service as a global default configuration, optional)](#global-configurationmonitoring-service-as-a-global-default-configuration-optional)
+    - [Backup Service Configuration(You can override the default global configuration)](#backup-service-configurationyou-can-override-the-default-global-configuration)
+    - [User custom configuration instructions](#user-custom-configuration-instructions)
+    - [Variables](#variables)
+- [Examples of fully configured](#examples-of-fully-configured)
+- [Mail template configuration](#mail-template-configuration)
+    - [Custom template configuration](#custom-template-configuration)
+    - [Template built-in variables](#template-built-in-variables)
+- [EasBackup Application](#easbackup-application)
+    - [Plugins:](#plugins)
+    - [Steps for usage](#steps-for-usage)
+- [EasyBackup Engine Framework](#easybackup-engine-framework)
+    - [Steps for usage](#steps-for-usage-1)
+    - [Custom Interface](#custom-interface)
+    - [Custom Properties File and Freemarker Configuration object](#custom-properties-file-and-freemarker-configuration-object)
+    - [Runtime access to information](#runtime-access-to-information)
+- [Plugins](#plugins-1)
+- [EasyBackup Web Manger](#easybackup-web-manger)
+- [End](#end)
+
+
 
 ## EasyBackup Feature
 
@@ -84,7 +108,7 @@ EasyBackup provide full support for the need to backup the content. Collection o
                                 
 ![EasyBackup Properties](images/EasyBackupProperties.png)
 
-### **Global configuration** (monitoring service as a global default configuration, optional)
+### Global configuration(monitoring service as a global default configuration, optional)
 
 ```properties
 # Backup ON or OFF, default is ON
@@ -146,7 +170,7 @@ easybackup.beforeClass=
 easybackup.afterClass=
 ```
 
-### **Backup Service Configuration**(You can override the default global configuration)
+### Backup Service Configuration(You can override the default global configuration)
 - **file** File backup service configuration
 - **user** Custom backup service configuration
 
@@ -436,7 +460,7 @@ EasyBackup Application already contains the current official and all plug-ins. I
 
 ### Plugins:
 
-- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`: **MySQL Database backup plugin**
+- `easybackup-mysql-plugin-3.3.2-RELEASE.jar`: **MySQL Database backup plugin**
 
 ### Steps for usage
  
@@ -483,7 +507,7 @@ EasyBackup  is also a free open source cross-platform Java content backup engine
  <dependency>
      <groupId>cn.easyproject</groupId>
      <artifactId>easybackup</artifactId>
-     <version>3.2.0-RELEASE</version>
+     <version>3.3.2-RELEASE</version>
  </dependency>
  ```
 
@@ -617,6 +641,11 @@ getProperties(): Properties object
 getPropertiesFile(): Properties File object
 ```
 
+
+
+## Plugins
+
+- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`  MySQL Databasse Backup plugin
 
 
 ## EasyBackup Web Manger
