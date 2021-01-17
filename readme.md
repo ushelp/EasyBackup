@@ -13,15 +13,13 @@ A free, open source, cross-platform content backup, content compression,  remote
 
 ## 中文
 
-EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程发送一体化任务调度应用及引擎框架。即可开箱即用(**EasyBackup Application**)，又可以作为内容备份引擎框架扩展(**EasyBackup Engine Framework**)。
+EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程发送一体化任务调度应用及引擎框架。
 
-EasyBackup 能够为需要进行内容备份的程序场景提供一体化支持。集合了基于任务调度的内容备份，内容压缩，远程发送，命令执行等等功能。而这一切，仅需进行简单的配置管理即可完成。
+能够为需要进行内容备份的程序场景提供一体化支持：集合了基于任务调度的内容备份，内容压缩，远程发送，命令执行等等功能。而这一切，仅需进行简单的配置管理即可完成。
 
-**最新版本**： `3.3.2-RELEASE`
-
-**插件**：
-
-- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`  MySQL 数据库备份插件
+请根据用途选择：
+- **EasyBackup Application**: 开箱即用版本，作为应用运行(`libs/easybackup_application`)
+- **EasyBackup Engine Framework**: 作为 Java 内容备份引擎框架扩展(`libs/easybackup_engine_framework`)
 
 
 [中文说明文档](doc/readme_zh_CN.md)
@@ -35,17 +33,14 @@ EasyBackup 能够为需要进行内容备份的程序场景提供一体化支持
 
 ## English
 
-EasyBackup is a free open-source Java-based, cross-platform content backup, content compression, remote sending  task scheduling application and engine framework. Can run as application(**EasyBackup Application**), and can be extended as the content backup engine framework(**EasyBackup Engine Framework**).
+EasyBackup is a free open-source Java-based, cross-platform content backup, content compression, remote sending  task scheduling application and engine framework. 
 
- 
-EasyBackup provide full support for the need to backup the content. Collection of content-based task scheduling backups, content compression, remote sending, command execution and more. And all this, just a simple configuration management to complete.
+Provide full support for the need to backup the content: Collection of content-based task scheduling backups, content compression, remote sending, command execution and more. And all this, just a simple configuration management to complete.
 
+Please choose according to purpose:
+- **EasyBackup Application**: Can run as application (`libs/easybackup_application`)
+- **EasyBackup Engine Framework**:  Can be extended as the content backup engine framework for Java (`libs/easybackup_engine_framework`)
 
-**Latest version**: `3.3.2-RELEASE`
-
-**Plugins**: 
-
-- `easybackup-mysql-plugin-3.2.0-RELEASE.jar`  MySQL Databasse Backup plugin
 
 [English Readme](doc/readme_en.md)
 
@@ -58,14 +53,14 @@ If you have more comments, suggestions or ideas, please contact me.
 
 
 
-## Maven
+## Maven - EasyBackup Engine Framework
 
 ```XML
 <!-- EasyBackup Engine Framework Maven dependency -->
 <dependency>
    <groupId>cn.easyproject</groupId>
    <artifactId>easybackup</artifactId>
-   <version>3.2.0-RELEASE</version>
+   <version>3.3.2-RELEASE</version>
 </dependency>
 
 <!-- EasyBackup Plugins -->

@@ -4,10 +4,9 @@ EasyBackup is a free open-source Java-based, cross-platform content backup, cont
 
 Provide full support for the need to backup the content: Collection of content-based task scheduling backups, content compression, remote sending, command execution and more. And all this, just a simple configuration management to complete.
 
-
 Please choose according to purpose:
-- **EasyBackup Application**: Can run as application
-- **EasyBackup Engine Framework**:  Can be extended as the content backup engine framework for Java
+- **EasyBackup Application**: Can run as application (`libs/easybackup_application`)
+- **EasyBackup Engine Framework**:  Can be extended as the content backup engine framework for Java (`libs/easybackup_engine_framework`)
 
 **Latest version**: `3.3.2-RELEASE`
 

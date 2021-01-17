@@ -5,8 +5,8 @@ EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程
 能够为需要进行内容备份的程序场景提供一体化支持：集合了基于任务调度的内容备份，内容压缩，远程发送，命令执行等等功能。而这一切，仅需进行简单的配置管理即可完成。
 
 请根据用途选择：
-- **EasyBackup Application**: 开箱即用版本，作为应用运行
-- **EasyBackup Engine Framework**: 作为 Java 内容备份引擎框架扩展
+- **EasyBackup Application**: 开箱即用版本，作为应用运行(`libs/easybackup_application`)
+- **EasyBackup Engine Framework**: 作为 Java 内容备份引擎框架扩展(`libs/easybackup_engine_framework`)
 
 
 ## TOC
