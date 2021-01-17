@@ -14,7 +14,7 @@ EasyBackup 同时是一个免费开源跨平台的 Java 内容备份引擎框架
  <dependency>
      <groupId>cn.easyproject</groupId>
      <artifactId>easybackup</artifactId>
-     <version>3.2.0-RELEASE</version>
+     <version>3.3.2-RELEASE</version>
  </dependency>
  ```
 
@@ -161,7 +161,7 @@ EasyBackup  is also a free open source cross-platform Java content backup engine
  <dependency>
      <groupId>cn.easyproject</groupId>
      <artifactId>easybackup</artifactId>
-     <version>3.2.0-RELEASE</version>
+     <version>3.3.2-RELEASE</version>
  </dependency>
  ```
 

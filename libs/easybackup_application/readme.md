@@ -7,8 +7,7 @@
 
 **EasBackup Application** 是开箱即用的 EasBackup 备份应用。按需配置您的备份服务，启动即可。
 
-
-EasyBackup Application 已经包含了当前官方的而所有插件。如果您开发了新的插件，可以将插件的内容直接添加到 `easybackup-X.X.X-RELEASE-APPLICATION.jar` 中。 
+EasyBackup Application 已经包含了当前官方的而所有插件。如果您开发了新的插件，可以将插件的内容直接添加到 `easybackup-application.jar` 中。 
 
 ### 内置插件：
 
