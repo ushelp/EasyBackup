@@ -56,7 +56,7 @@
 		<spring.version>4.3.1.RELEASE</spring.version>
 		<javamail.version>1.5.5</javamail.version>
 		<freemarker.version>2.3.23</freemarker.version>
-		<quartz.version>2.2.3</quartz.version>
+		<quartz.version>2.3.2</quartz.version>
 	</properties>
 
 	<dependencies>
