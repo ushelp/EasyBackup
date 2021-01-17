@@ -45,7 +45,7 @@ A free, open source, cross-platform content backup, content compression,  remote
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<easybackup.version>3.2.0-RELEASE</easybackup.version>
-		<junit.version>4.11</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<slf4jLog4j.version>1.7.21</slf4jLog4j.version>
 		<spring.version>4.3.1.RELEASE</spring.version>
 		<javamail.version>1.5.5</javamail.version>
