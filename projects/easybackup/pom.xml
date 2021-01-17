@@ -51,7 +51,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<commonsCompress.version>1.12</commonsCompress.version>
 		<!-- <easycommonsProperties.version>1.4.1-RELEASE</easycommonsProperties.version> -->
-		<junit.version>4.11</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<slf4jLog4j.version>1.7.21</slf4jLog4j.version>
 		<spring.version>4.3.1.RELEASE</spring.version>
 		<javamail.version>1.5.5</javamail.version>
