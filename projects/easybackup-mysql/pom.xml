@@ -51,7 +51,7 @@ A free, open source, cross-platform content backup, content compression,  remote
 		<javamail.version>1.5.5</javamail.version>
 		<freemarker.version>2.3.23</freemarker.version>
 		<quartz.version>2.2.3</quartz.version>
-		<commonsCompress.version>1.12</commonsCompress.version>
+		<commonsCompress.version>1.19</commonsCompress.version>
 	</properties>
 
 	<dependencies>
