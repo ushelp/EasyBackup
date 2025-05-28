@@ -72,7 +72,7 @@ Please choose according to purpose:
 - **Task Schedule**
  `CronExpression` based backup task scheduling.
 
-![EasyBackup principal components](images/EasyBackup.png)
+![EasyBackup principal components](doc/images/EasyBackup.png)
 
 
 

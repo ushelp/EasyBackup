@@ -70,7 +70,7 @@ EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程
 - **Task Schedule（任务调度器）**
  基于 `CronExpression` 的备份任务调度。
 
-![EasyBackup principal components](images/EasyBackup.png)
+![EasyBackup principal components](doc/images/EasyBackup.png)
 
 
 
@@ -89,13 +89,13 @@ EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程
 
  封装了每一项备份服务所需的相关数据和配置信息（`basic`），完全配置信息（`properties`），调度信息（`task schedure`），拦截器信息（`interceptor`），备份文件信息（`targetFile`, `backupDir`, `backupFile`），压缩信息（`compress`）和发送者（`senders`）。
 
- ![BackupConfiguration](images/BackupConfiguration.png)
+ ![BackupConfiguration](doc/images/BackupConfiguration.png)
 
 - **BackupJob**
  
  EasyBackup 会根据 `BackupConfiguration` 对象，创建监控 Job。
 
- ![EasyBackup Job](images/BackupConfigurationJob.png)
+ ![EasyBackup Job](doc/images/BackupConfigurationJob.png)
 
 ## Properties
 
@@ -103,7 +103,7 @@ EasyBackup 是一个基于 Java 的免费开源跨平台内容备份压缩远程
 
 ### 配置结构
 
-![EasyBackup Properties](images/EasyBackupProperties.png)
+![EasyBackup Properties](doc/images/EasyBackupProperties.png)
 
 ### 全局配置（作为监控服务配置的全局默认值，可选）
 
@@ -466,7 +466,7 @@ easybackup.user.MySQL.cronexpression=0 0 2 * * ?
 EasyBackup 使用了 `freemarker` 模板技术进行邮件内容渲染，模板必须存放在 `template` 目录下，默认使用 `mail.tpl` 模板。
 
 
-![mail.tpl](images/mail.png)
+![mail.tpl](doc/images/mail.png)
 
 
 ### 自定义模板配置
@@ -689,7 +689,7 @@ getPropertiesFile()：Properties File 对象
 
 [EasyBackup Web Manger](https://github.com/ushelp/EasyBackup-Web "移步 EasyBackup Web Manger") 是一个基于 EasyBackup 框架引擎的 Java Web 管理器，可以在 Web UI 下完成备份配置管理，备份启动，停止控制。
 
-![EasyBackup web manager](images/dashboard_zh_CN.png)
+![EasyBackup web manager](doc/images/dashboard_zh_CN.png)
 
 
 ## End
